@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>创建团队</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspired Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/sitedata_bas.js" language="javascript"></script>
+</head>
+<body><center>
+
+	<!--header-->
+	<div class="container">
+	<div class="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+
+			
+			<div class="header-top-on">
+				{% if userid %}
+				<p>welcome,{{username}}</p>
+				{% else %}
+				<p><a href="login.html">登录</a>/<a href="register.html">注册</a></p>
+				{% endif %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!---->
+		<div class="header-bottom">
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul>
+					<li><a href="home.html" data-hover="首页">首页  </a> </li>
+					<li><a href="strategy.html" data-hover="攻略" > 攻略</a></li>
+					<li><a href="forum.html" data-hover="论坛"> 论坛 </a></li>
+					<li><a href="diary.html" data-hover="日志撰写"> 日志撰写</a></li>
+					<li  class="active" ><a href="team.html" >我的团队 </a></li>
+					<li><a href="information.html" data-hover="个人资料">个人资料 </a></li>							</ul>
+				<!--script-->
+				<script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});
+				});
+				</script>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	   </div>
+	</div>
+	</div>
+	<!---->
+	
+	{% if Recmem %}
+	<!build--->
+	<div class="container"><center>
+	   <div class="login">
+		<h2>组建团队</h2>
+		<div class="clearfix"></div>
+
+		<form role="form" method="POST">
+			<table width="564" border="0" cellpadding="0" cellspacing="0" class="left">
+			<tr>
+				<td style="text-align:right"><span>团队名称：</span></td>
+				<td><input type="text" id="teamname" name="teamname" placeholder=""></td>
+			</tr>
+			<tr>
+				<td style="text-align:right"><span>旅游去向：</span></td>
+				<td><select class="" id="destination">
+						{% for pl in Place %}}
+						<option value={{pl.id}}>{{pl.loc_place}}</option>
+						{% endfor %}
+					</select> 
+				</td>
+			</tr>
+			<tr>
+                    		<td style="text-align:right"><span>出发城市：</span></td>
+				<td>
+            				<select name="region1"  id="region1">
+					</select>				    
+              				<select name="region2"  id="region2">
+				        </select>
+					
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:right"><span>队友年龄：</span></td>
+				<td><input type="text" name="low_age"></td><td align="center">～</td><td><input type="text" name="high_age"></td>
+			</tr>
+			</table>
+			<div style="padding:10px 300px;"><input type="submit" value="下一步"></div>
+		</form>
+	</center></div>
+	<!--->	
+	{% else %}
+	<div class="container"><center>
+	   <div class="login">
+		<h2>选择队友</h2>
+		<form method="POST">
+			<div class="checkbox">
+				{% for mem in Recmem %}
+				<div class="recmem">
+					<input type="checkbox" value="" name={{men.id}}>姓名：{{mem.username}}-所在地:{{mem.live_province}},{{mem.live_city}}-年龄：{{mem.age}}
+				</div>
+				{% endfor %}
+			</div>
+			<div style="padding:10px 300px;"><input type="submit" value="提交"></div>
+		</form>
+	   </div>		
+	</center></div>	
+	{% endif %}
+</center></body>
+</html>
+			
