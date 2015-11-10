@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change Information</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspired Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+<script src="js/sitedata_bas.js" language="javascript"></script>
+<script src="js/register.js" language="javascript"></script>
+<script src="js/datecreate.js" language="javascript"></script>
+</head>
+<body>
+	<!--header-->
+	<div class="container">
+	<div class="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+
+			
+			<div class="header-top-on">
+				{% if userid %}
+				<p>welcome,{{username}}</p>
+				{% else %}
+				<p><a href="login.html">登录</a>/<a href="register.html">注册</a></p>
+				{% endif %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!---->
+		<div class="header-bottom">
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul>
+					<li><a href="home.html" data-hover="首页" >首页  </a> </li>
+					<li><a href="strategy.html" data-hover="攻略" > 攻略</a></li>
+					<li><a href="forum.html" data-hover="论坛"> 论坛 </a></li>
+					<li><a href="diary.html" data-hover="日志撰写"> 日志撰写</a></li>
+					<li><a href="team.html" data-hover="我的团队">我的团队 </a></li>
+					<li><a href="information.html" data-hover="个人资料">个人资料 </a></li>							</ul>
+				<!--script-->
+				<script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});
+				});
+				</script>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<!---->
+
+	<div class="container">
+		<div class="login">
+		<h2>修改资料</h2>
+			<form method="post" action="">
+			<table width="564" border="0" cellpadding="0" cellspacing="0" class="left">
+			<tr>
+				<td style="text-align:right"><span>用户名：</span></td>
+				<td><input type="text" name="uname" id="uname" value={{User.name}} onblur="checkName(img1,this)" onfocus="getfocus(this,img1)"> </td>				
+			</tr>
+			<tr>
+				<td></td>
+				<td><img name="img1" width="16" height="16" id="img1" />请输入2到20位数字、字符、中文</td>
+			</tr>
+			<tr>
+				<td style="text-align:right"><span>邮箱：</span></td>
+				<td><u>{{User.email}}</u></td> 				
+			</tr>
+			<tr>
+				<td></td>
+				<td>您的邮箱具有唯一性，不可改</td>
+			</tr>
+			<tr>
+				<td style="text-align:right"><span>电话：</span></td>
+				<td><input type="text" name="uphone" id="uphone" value={{User.phone}} onblur="checkTel(img5,this)" onfocus="getfocus(this,img5)"></td> 				
+			</tr>
+			<tr>
+				<td></td>
+				<td><img name="img5" width="16" height="16" id="img5" />请输入您的手机号码</td>
+			</tr>
+			<tr>
+				<td style="text-align:right"><span>QQ：</span></td>
+				<td><input type="text" name="uqq" id="uqq" value={{User.qq}} onblur="checkQq(img6,this)" onfocus="getfocus(this,img6)"></td> 				
+			</tr>
+			<tr>
+				<td></td>
+				<td><img name="img6" width="16" height="16" id="img6" />请输入您的QQ号码</td>
+			</tr>
+			<tr>
+				<td style="text-align:right"><span>性别：</span></td>
+				<td><select class="" id="sex" value={{User.sex}}>
+					<option value="M">男</option>
+					<option value="F">女</option>
+				</select></td> 
+			</tr>
+			<tr></tr>
+			<tr>
+				<td style="text-align:right"><span>出生年月：</span></td>
+				<td>
+            				<select name="year" id="year" value={{User.birth_year}}>
+					</select>
+              				<select name="month"  id="month" value={{User.birth_month}}>
+				        </select>
+              				<select name="date"  id="date" value={{User.birth_day}}>
+              				</select>
+				</td>
+			</tr>
+			<tr>
+                    		<td style="text-align:right"><span>所在地：</span></td>
+				<td>
+            				<select name="region1"  id="region1" value={{User.live_provice}}>
+					</select>				    
+              				<select name="region2"  id="region2" value={{User.live_city}}>
+				        </select>
+					
+				</td>
+
+			</tr>
+			</table>
+			<div style="padding:10px 160px;"><a href="information.html"><input type="submit" value="确认修改"></a></div>
+			</form>
+		</div>	
+	</div>	
+</body>
+</html>
