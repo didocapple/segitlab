@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人资料</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspired Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+</head>
+<body><center>
+	<!--header-->
+	<div class="container">
+	<div class="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+
+			
+			<div class="header-top-on">
+				{% if userid %}
+				<p>welcome,{{username}}</p>
+				{% else %}
+				<p><a href="login.html">登录</a>/<a href="register.html">注册</a></p>
+				{% endif %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!---->
+		<div class="header-bottom">
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul>
+					<li><a href="home.html" data-hover="首页">首页  </a> </li>
+					<li><a href="strategy.html" data-hover="攻略" > 攻略</a></li>
+					<li><a href="forum.html" data-hover="论坛"> 论坛 </a></li>
+					<li><a href="diary.html" data-hover="日志撰写"> 日志撰写</a></li>
+					<li><a href="team.html" data-hover="我的团队">我的团队 </a></li>
+					<li><a href="information.html" data-hover="个人资料">个人资料 </a></li>							</ul>
+				<!--script-->
+				<script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});
+				});
+				</script>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<!---->
+	
+	<div class="container">
+		<div class="Dtitle">
+			日志
+		</div>
+		<div style="right:150px; margin:10px;">
+			作者：{{invi.invi_author}}
+		</div>
+		<div class="Dcontext">
+			<p>2015.9.12--2015.9.15
+
+
+
+
+厦门是一个很nice的地方，2014年公司年会第一次接触厦门，因为接触的不是那么透彻，所以决定今年再和我家刘先森发掘一下下~~所以就有了这次游记的标题~~
+
+
+
+
+这次的旅行真的是随便看携程的网页，发现团购频道里推荐的一个“预定旅游”的产品。然后的，然后，我俩一拍即合，在5月份就订下了9月份的厦门4天3晚自由行~~
+
+
+
+
+预定旅游这个产品要说下，都是自由行的产品，包括：机票和酒店，拍下后需要自己联系第三方公司安排一个月以后的出行日期~~因为我们不想天气太热的时候去，所以一直推到了9月份，事实证明是正确的，因为9月份也是很热的~~
+
+
+
+
+
+拍的时间太早，所以在这个期间安排了台湾，河南，巴厘岛的游玩，有兴趣的可以看我的游记哦~~
+
+【巴厘岛】：http://you.ctrip.com/travels/bali438/2516542.html 
+
+【草原天路】：http://you.ctrip.com/travels/zhangjiakou497/2626496.html
+
+【土耳其】：http://you.ctrip.com/travels/istanbul258/2335165.html
+
+【西安】：http://you.ctrip.com/travels/xian7/2360845.html
+
+
+【青岛】：http://you.ctrip.com/travels/qingdao5/2353467.html
+
+【新西兰】：http://you.ctrip.com/travels/newzealand100078/2379530.html
+
+【台湾】：http://you.ctrip.com/travels/taiwan100076/2403513.html
+
+【镇江、扬州】：http://you.ctrip.com/travels/yangzhou12/1045644.html
+
+【南京】：http://you.ctrip.com/travels/nanjing9/1045643.html
+
+【河南】：http://you.ctrip.com/travels/henan100058/2415482.html
+
+【湖南、湖北】：http://you.ctrip.com/travels/changsha148/2347892.html 
+
+
+
+
+
+因为之前去过一次，所以还是有点主人翁的感觉的，攻略啥的都没怎么弄，只想说走到哪里玩到哪里~~幸好在出发前还是在网上查了下最新的旅游攻略，发现这一年变化还是有的，那就是去鼓浪屿的轮渡调整了~~
+
+
+
+
+所以，重要的事情在下方显示~~
+
+
+
+
+鼓浪屿轮渡：之前是在厦门的每个码头都可以随时买票上鼓浪屿游玩的，现在NO,NO,NO~现在都要在“厦门国际邮轮中心”这一个地方坐船到鼓浪屿~~票价也是涨价成35元/人（往返）或者50元/人（豪华往返），船还是那个船，但是再也没有8元/人（往返）的票价了~~
+
+
+
+
+轮渡购票方式：一种现场购票，一种网上预约购票。
+
+
+
+
+现场购票：这种方式不建议自由行，因为现在不是随时买随时就能去鼓浪屿，也许你上午到了邮轮中心买到的是下午的船票，这段时间只能遥望鼓浪屿了~~或者被周围的黄牛不断的包围，让你买他们的高价票。
+
+
+
+
+网上购票：这个真的是不错，为了控制鼓浪屿的客流，也不至于被黄牛骚扰。厦门国际邮轮中心有个官网，可以在上面选择时间段购票，登船的时候只要刷身份证就可以了，特别的方便。我们就是在出游前两天在网上预订的~~
+
+官网地址：http://www.xmferry.com/ 
+
+
+
+
+还有，还有，这个比船票更加的重要，你要是没看见，绝对，绝对的影响你游玩的心情~~去鼓浪屿建议穿长袖，长裤，带驱蚊药水。因为我们没有准备，在鼓浪屿上真的是被咬惨了，一天下来十多个大包，我这一夏天也没被咬过这么多~~因为鼓浪屿上都是那种老榕树，蚊虫众多，而且蚊子直接落身上，扇都扇不走那种~~所以我们在岛上看见所有穿短裤，裙子的人，都是大红包~~
+
+
+
+
+好啦~~说了去厦门两大重要事情，来看看厦门nice的风景~~
+</p>
+		</div>
+		<div class="Dcomment-con">
+			<div class="Dcomment">评论</div>
+			
+			<div class="comment">
+				<div class="col-md-2 Dcomment-con">
+					<img src="images/head.jpg">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
