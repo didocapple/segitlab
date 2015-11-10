@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>日志撰写</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspired Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+</head>
+<body>
+	<!--header-->
+	<div class="container">
+	<div class="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+
+			
+			<div class="header-top-on">
+				{% if userid %}
+				<p>welcome,{{username}}</p>
+				{% else %}
+				<p><a href="login.html">登录</a>/<a href="register.html">注册</a></p>
+				{% endif %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!---->
+		<div class="header-bottom">
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul>
+					<li><a href="home.html" data-hover="首页">首页  </a> </li>
+					<li><a href="strategy.html" data-hover="攻略" > 攻略</a></li>
+					<li><a href="forum.html" data-hover="论坛"> 论坛 </a></li>
+					<li  class="active" ><a href="diary.html"> 日志撰写</a></li>
+					<li><a href="team.html" data-hover="我的团队">我的团队 </a></li>
+					<li><a href="information.html" data-hover="个人资料">个人资料 </a></li>							</ul>
+				<!--script-->
+				<script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});
+				});
+				</script>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<!---->
+
+	<div class="container">
+		<div style="position:absolute;right:150px;margin:10px;">
+			<a href="#}"><button type="button" class="btn btn-primary">我的日志</button></a>
+		</div>
+		<div class="contact">
+			<div class="col-md-12 contact-para">
+				<p class="class-para">写下你的所闻所感，与驴友们共享~</p>
+				<h5>个人日志</h5>
+				<form>
+					<div class="grid-contact">
+						<div class="col-md-4 contact-grid">
+							<p>标题</p>
+							<input type="text" name="title" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="grid-contact">
+						<div class="col-md-6 contact-grid">
+							<p>景点</p>
+							<select class="" id="destination">
+								{% for pl in Place %}}
+								<option value={{pl.id}}>{{pl.loc_place}}</option>
+								{% endfor %}
+							</select> 
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<p class="your-para">MESSAGE</p>
+					<textarea name="text" cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = '';}"></textarea>
+					<div class="grid-contact">
+						<div class="col-md-2 contact-grid">
+							发表为：<label><input type="checkbox" value="" name="diary">日志</lable>
+						</div>
+						<div class="col-md-2 contact-grid">
+							<label><input type="checkbox" value="" name="strategy">攻略</lable>
+						</div>
+					</div>
+					<div class="send">
+						<input type="submit" value="提交" >
+					</div>
+	</div>
+
+</body>
+</html>
