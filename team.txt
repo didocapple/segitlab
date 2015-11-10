@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人资料</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspired Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+</head>
+<body><center>
+	<!--header-->
+	<div class="container">
+	<div class="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+
+			
+			<div class="header-top-on">
+				{% if userid %}
+				<p>welcome,{{username}}</p>
+				{% else %}
+				<p><a href="login.html">登录</a>/<a href="register.html">注册</a></p>
+				{% endif %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!---->
+		<div class="header-bottom">
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul>
+					<li><a href="home.html" data-hover="首页">首页  </a> </li>
+					<li><a href="strategy.html" data-hover="攻略" > 攻略</a></li>
+					<li><a href="forum.html" data-hover="论坛"> 论坛 </a></li>
+					<li><a href="diary.html" data-hover="日志撰写"> 日志撰写</a></li>
+					<li class="active" ><a href="team.html" >我的团队 </a></li>
+					<li><a href="information.html" data-hover="个人资料">个人资料 </a></li>							</ul>
+				<!--script-->
+				<script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});
+				});
+				</script>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<!---->
+
+	<div class="change_btn">
+		<div style="position:absolute;right:150px;">
+			<a href="build_team.html"><button type="button" class="btn btn-primary">组建团队</button></a>
+		</div>
+		<div class="detail_inf">
+		   {% for team in teams %}
+			<h4>{{team.team_name}}</h4>
+			<table>
+			<tr>
+				<td>用户名</td><td>性别</td><td>年龄</td><td>QQ</td><td>所在地</td>
+			</tr>
+			{% for User in team.mem %}
+			<tr>
+				<td>{{User.username}}</td><td>{{User.sex}}</td><td>{{User.age}}</td><td>{{User.qq}}</td><td>{{User.live_provice}}-{{User.live_city}}</td>
+			</tr>
+			{% endfor %}
+			</table>
+		   {% endfor %}
+		</div>
+	</div>
+
+	
+	
+	
+
+					
+</center></body>
+</html>
+			
