@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Inspired Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+</head>
+<body>
+	<!--header-->
+	<div class="container">
+	<div class="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="home.html"><img src="images/logo.png" alt="" ></a>
+			</div>
+
+			
+			<div class="header-top-on">
+				{% if userid %}
+				<p>welcome,{{username}}</p>
+				{% else %}
+				<p><a href="login.html">登录</a>/<a href="register.html">注册</a></p>
+				{% endif %}
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!---->
+		<div class="header-bottom">
+			<div class="top-nav">
+				<span class="menu"> </span>
+				<ul>
+					<li class="active" ><a href="home.html" >首页  </a> </li>
+					<li><a href="strategy.html" data-hover="攻略" > 攻略</a></li>
+					<li><a href="forum.html" data-hover="论坛"> 论坛 </a></li>
+					<li><a href="diary.html" data-hover="日志撰写"> 日志撰写</a></li>
+					<li><a href="team.html" data-hover="我的团队">我的团队 </a></li>
+					<li><a href="information.html" data-hover="个人资料">个人资料 </a></li>							</ul>
+				<!--script-->
+				<script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});
+				});
+				</script>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<!---->
+	<div class="container">
+		<div class="banner">
+		   <!--manage-->
+		   <div class="banner-top">
+			<div class="wmuSlider example1">
+				   <div class="wmuSliderWrapper">
+					   <article style="position: absolute; width: 100%; opacity: 0;">
+							<div class="banner-bottom">
+								<a href="#"><img class="img-responsive line-in" src="images/banner.jpg" alt=""/></a>
+								<div class="dummy-text">
+									<div class="doe">
+										<h6>哈尔滨圣索菲亚大教堂</h6>
+										<br>
+										<p>哈尔滨圣索菲亚教堂坐落在东北名城哈尔滨，始建于1907年3月，原为沙俄东西伯利亚第四步兵师修建中东铁路的随军教堂，全木结构，平面呈拉丁十字布局，是典型的拜占庭风格建筑</p>
+									</div>
+								</div>				
+								<div class="clearfix"> </div>
+							</div>
+					    </article>
+					    <article style="position: absolute; width: 100%; opacity: 0;">
+							<div class="banner-bottom">
+								<a href="#"><img class="img-responsive line-in" src="images/banner1.jpg" alt=""/></a>
+								<div class="clearfix"> </div>
+							</div>
+					    </article>
+				   </div>
+	               
+	            	</div>
+	            	<script src="js/jquery.wmuSlider.js"></script>
+			<script>				
+			$('.example1').wmuSlider({
+				 pagination:false,
+			});         
+			</script> 	
+          	         
+		   </div>
+		</div>
+	</div>
+	<!---->
+			
+</body>
+</html>
